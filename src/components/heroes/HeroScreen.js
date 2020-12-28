@@ -12,7 +12,11 @@ export const HeroScreen = ({ history }) => {
   }
 
   const handleReturn = () => {
-    history.goBack();
+    if (history.length <= 2) {
+      history.push('/');
+    } else {
+      history.goBack();
+    }
   };
 
   const {
